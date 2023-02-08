@@ -3,7 +3,6 @@ package com.calculator.views.calculadora;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
@@ -12,8 +11,6 @@ import com.vaadin.flow.router.Route;
 public class CalculadoraView extends VerticalLayout {
 
     public CalculadoraView() {
-        Boolean x = null;
-        Boolean y = null;
         Div teste = new Div();
         teste.add("=");
         
@@ -83,7 +80,11 @@ public class CalculadoraView extends VerticalLayout {
         porcentagem.setClassName("ce");
         porcentagem.addClickListener(clickEvent -> {
             moduloTextField.removeAll();
+            var hist = resultadoTextField.getText();
             moduloTextField.add("%");
+            historicoTextField.removeAll();
+            historicoTextField.add(hist);
+            resultadoTextField.removeAll();
         });
         
         Button divisao = new Button("/");
@@ -91,16 +92,17 @@ public class CalculadoraView extends VerticalLayout {
         divisao.setClassName("modulos");
         divisao.addClickListener(clickEvent -> {
             moduloTextField.removeAll();
+            var hist = resultadoTextField.getText();
             moduloTextField.add("/");
+            historicoTextField.removeAll();
+            historicoTextField.add(hist);
+            resultadoTextField.removeAll();
         });
         
         Button sete = new Button("7");
         buttons.add(sete);
         sete.setClassName("ce");
         sete.addClickListener(clickEvent -> {
-            if (moduloTextField != teste) {
-                
-            }
             resultadoTextField.add("7");
         });
         
@@ -123,7 +125,11 @@ public class CalculadoraView extends VerticalLayout {
         multiplicacao.setClassName("modulos");
         multiplicacao.addClickListener(clickEvent -> {
             moduloTextField.removeAll();
+            var hist = resultadoTextField.getText();
             moduloTextField.add("X");
+            historicoTextField.removeAll();
+            historicoTextField.add(hist);
+            resultadoTextField.removeAll();
         });
         
         Button quatro = new Button("4");
@@ -152,7 +158,11 @@ public class CalculadoraView extends VerticalLayout {
         menos.setClassName("modulos");
         menos.addClickListener(clickEvent -> {
             moduloTextField.removeAll();
+            var hist = resultadoTextField.getText();
             moduloTextField.add("-");
+            historicoTextField.removeAll();
+            historicoTextField.add(hist);
+            resultadoTextField.removeAll();
         });
         
         Button um = new Button("1");
@@ -181,17 +191,22 @@ public class CalculadoraView extends VerticalLayout {
         mais.setClassName("modulos");
         mais.addClickListener(clickEvent -> {
             moduloTextField.removeAll();
+            var hist = resultadoTextField.getText();
             moduloTextField.add("+");
+            historicoTextField.removeAll();
+            historicoTextField.add(hist);
+            resultadoTextField.removeAll();
         });
         
         Button maisOuMenos = new Button("+/-");
         buttons.add(maisOuMenos);
         maisOuMenos.setClassName("ce");
         maisOuMenos.addClickListener(clickEvent -> {
-            //troca sinal
             var teste2 = resultadoTextField.getText();
             resultadoTextField.removeAll();
-            resultadoTextField.add("-" + teste2);
+            int number = Integer.parseInt(teste2) * (-1);
+            String s = String.valueOf(number);
+            resultadoTextField.add(s);
         });
         
         Button zero = new Button("0");
@@ -205,16 +220,72 @@ public class CalculadoraView extends VerticalLayout {
         buttons.add(virgula);
         virgula.setClassName("ce");
         virgula.addClickListener(clickEvent -> {
-            resultadoTextField.add(",");
+            resultadoTextField.add(".");
+            String teste5 = resultadoTextField.getText();
+            int number = Integer.parseInt(teste5);
+            String s = String.valueOf(number);
+            resultadoTextField.removeAll();
+            resultadoTextField.add(s);
         });
         
         Button igual = new Button("=");
         buttons.add(igual);
         igual.setClassName("igual");
         igual.addClickListener(clickEvent -> {
-            moduloTextField.removeAll();
-            moduloTextField.add("=");
+            String moduloHist = moduloTextField.getText();
+            
+            var histResult = historicoTextField.getText();
+            var y = resultadoTextField.getText();
+            int number = Integer.parseInt(histResult);
+            int number2 = Integer.parseInt(y);
+
+            historicoTextField.removeAll();
+            historicoTextField.add(histResult + moduloHist + y);
+            resultadoTextField.removeAll();
+            
+            switch (moduloHist) {
+                case "+":
+                    {
+                        var result = number + number2;
+                        String s = String.valueOf(result);
+                        resultadoTextField.add(s);
+                        break;
+                    }
+                case "-":
+                    {
+                        var result = number - number2;
+                        String s = String.valueOf(result);
+                        resultadoTextField.add(s);
+                        break;
+                    }
+                case "X":
+                    {
+                        var result = number * number2;
+                        String s = String.valueOf(result);
+                        resultadoTextField.add(s);
+                        break;
+                    }
+                case "/":
+                    {
+                        var result = number / number2;
+                        String s = String.valueOf(result);
+                        resultadoTextField.add(s);
+                        break;
+                    }
+                case "%":
+                    {
+                        var result = number % number2;
+                        String s = String.valueOf(result);
+                        resultadoTextField.add(s);
+                        break;
+                    }
+                default:
+                    resultadoTextField.add("Erro");
+                    break;
+            }
         });
+        
+        
 
     }
 }
