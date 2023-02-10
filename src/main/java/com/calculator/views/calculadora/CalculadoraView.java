@@ -11,9 +11,6 @@ import com.vaadin.flow.router.Route;
 public class CalculadoraView extends VerticalLayout {
 
     public CalculadoraView() {
-        Div teste = new Div();
-        teste.add("=");
-
         setSizeFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
@@ -40,7 +37,6 @@ public class CalculadoraView extends VerticalLayout {
         tela.setClassName("tela");
 
         Div historicoTextField = new Div();
-        historicoTextField.add("1 + 1");
         historico.add(historicoTextField);
 
         VerticalLayout modulo = new VerticalLayout();
@@ -52,8 +48,6 @@ public class CalculadoraView extends VerticalLayout {
 
         Div moduloTextField = new Div();
         Div resultadoTextField = new Div();
-        moduloTextField.add("=");
-        resultadoTextField.add("");
         modulo.add(moduloTextField);
         resultado.add(resultadoTextField);
 
@@ -231,8 +225,8 @@ public class CalculadoraView extends VerticalLayout {
 
             var histResult = historicoTextField.getText();
             var y = resultadoTextField.getText();
-            float number = Float.parseFloat((histResult));
-            float number2 = Float.parseFloat((y));
+            double number = Double.parseDouble((histResult));
+            double number2 = Double.parseDouble((y));
 
             historicoTextField.removeAll();
             historicoTextField.add(histResult + moduloHist + y);
@@ -241,32 +235,51 @@ public class CalculadoraView extends VerticalLayout {
             switch (moduloHist) {
                 case "+": {
                     var result = number + number2;
-                    String s = String.valueOf(result);
-                    resultadoTextField.add(s);
+                    if (result == .0d) {
+                        int i = (int)result;
+                        String s = String.valueOf(i);
+                        resultadoTextField.add(s);
+                    } else {
+                        String s = String.valueOf(result);
+                        resultadoTextField.add(s);
+                    }
+                    moduloTextField.removeAll();
+                    moduloTextField.add("=");
                     break;
                 }
                 case "-": {
                     var result = number - number2;
                     String s = String.valueOf(result);
                     resultadoTextField.add(s);
+                    moduloTextField.removeAll();
+                    moduloTextField.add("=");
                     break;
                 }
                 case "X": {
                     var result = number * number2;
                     String s = String.valueOf(result);
                     resultadoTextField.add(s);
+                    moduloTextField.removeAll();
+                    moduloTextField.add("=");
                     break;
                 }
                 case "/": {
                     var result = number / number2;
                     String s = String.valueOf(result);
                     resultadoTextField.add(s);
+                    moduloTextField.removeAll();
+                    moduloTextField.add("=");
                     break;
                 }
                 case "%": {
                     var result = number % number2;
                     String s = String.valueOf(result);
                     resultadoTextField.add(s);
+                    moduloTextField.removeAll();
+                    moduloTextField.add("=");
+                    break;
+                }
+                case "=": {
                     break;
                 }
                 default:
