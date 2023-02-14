@@ -4,9 +4,6 @@
 
 ![image](https://user-images.githubusercontent.com/72043758/218619610-1adfdb47-09c5-456f-a714-8eb5549b24c8.png)
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
-
 ## Running the application
 
 The project is a standard Maven project. To run it from the command line,
