@@ -1,119 +1,123 @@
 @import url('line-awesome/dist/line-awesome/css/line-awesome.min.css');
 
 .calculadora {
-    background-color: #807ECE;
+  background: linear-gradient(180deg, #807ece 0%, #8e7ece 100%);
 }
 
 .layout {
-    background-color: #2D2A37;
-    display: flex;
-    width: 356px !important;
-    height: 566px;
-    border-radius: 50px;
-    align-items: center;
+  display: flex;
+  width: 356px !important;
+  height: 566px;
+  border-radius: 50px;
+  align-items: center;
+  background: #2d2a37;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 188px 52px rgba(0, 0, 0, 0.01), 0px 120px 48px rgba(0, 0, 0, 0.04),
+    0px 68px 41px rgba(0, 0, 0, 0.15), 0px 30px 30px rgba(0, 0, 0, 0.26), 0px 8px 17px rgba(0, 0, 0, 0.29),
+    inset 0px 6px 8px rgba(255, 255, 255, 0.1), inset 0px -4px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 48px;
 }
 
 .display {
-    margin-top: 25px;
-    width: 288px !important;
-    height: 86px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px 22px 0px 18px;
-    gap: 8px;
+  margin-top: 25px;
+  width: 288px !important;
+  height: 86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 22px 0px 18px;
+  gap: 8px;
 }
 
 .buttons {
-    padding: 0;
-    margin-top: 26px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 328px !important;
-    height: 368px;
-    gap: 12px;
+  padding: 0;
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 328px !important;
+  height: 368px;
+  gap: 12px;
 }
 
 .historico {
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 140%;
-    padding: 0 13px 0 0;
-    display: flex;
-    align-items: flex-end;
-    width: 248px !important;
-    height: 28px !important;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  padding: 0 13px 0 0;
+  display: flex;
+  align-items: flex-end;
+  color: #6b6b6b;
+  width: 248px !important;
+  height: 28px !important;
 }
 
 .tela {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0px;
-    width: 248px !important;
-    height: 50px !important;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px;
+  width: 248px !important;
+  height: 50px !important;
 }
 
 .resultado {
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 140%;
-    display: flex;
-    align-items: flex-end;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 140%;
+  display: flex;
+  align-items: flex-end;
 }
 
 .modulo {
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 140%;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 140%;
+  color: #6b6b6b;
 }
 
 .ce {
-    min-width: 64px;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    max-width: 64px;
-    max-height: 64px;
+  min-width: 64px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 64px;
+  max-height: 64px;
 
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
-    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06);
-    border-radius: 999px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2d2a37;
+  box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1),
+    0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
 }
 
 .modulos {
-    min-width: 64px;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    max-width: 64px;
-    max-height: 64px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878;
-    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
-    border-radius: 999px;
+  min-width: 64px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 64px;
+  max-height: 64px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878;
+  box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1),
+    0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
 }
 
 .igual {
-    min-width: 64px;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    max-width: 64px;
-    max-height: 64px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), #7F45E2;
-    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
-    border-radius: 999px;
+  min-width: 64px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 64px;
+  max-height: 64px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), #7f45e2;
+  box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1),
+    0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
 }
-
